@@ -6,6 +6,9 @@ import Sliders from "./components/Slider/Sliders";
 import Categories from "./components/Categories/Categories";
 import Products from "./components/Products/Products";
 import Campaigns from "./components/Campains/Campaigns";
+import Blogs from "./components/Blogs/Blogs";
+import Brands from "./components/Brands/Brands";
+import CampaignSingle from "./components/CampaignSingle/CampaignSingle";
 
 function App() {
   return (
@@ -15,6 +18,10 @@ function App() {
       <Categories />
       <Products />
       <Campaigns />
+      <Products />
+      <Blogs />
+      <Brands />
+      <CampaignSingle />
       <Policy />
       <Footer />
     </>
