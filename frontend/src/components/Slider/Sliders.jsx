@@ -7,10 +7,10 @@ const Sliders = () => {
     <div className="slider-elements">
      <SliderItem />
       <div className="slider-buttons">
-        <button onclick="plusSlide(-1)">
+        <button>
           <i className="bi bi-chevron-left"></i>
         </button>
-        <button onclick="plusSlide(1)">
+        <button>
           <i className="bi bi-chevron-right"></i>
         </button>
       </div>
