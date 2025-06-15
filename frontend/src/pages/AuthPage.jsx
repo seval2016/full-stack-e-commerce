@@ -1,14 +1,12 @@
 import Auth from "../components/Auth/Auth";
-import Header from "../components/Layout/Header/Header";
 import Footer from "../components/Layout/Footer/Footer";
-import Policy from "../components/Policy/Policy";
+import Header from "../components/Layout/Header/Header";
 
 const AuthPage = () => {
   return (
     <>
       <Header />
       <Auth />
-      <Policy />
       <Footer />
     </>
   );
