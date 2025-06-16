@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# This file contains local frontend notes and should not be committed to the repository
+frontend.txt
+
+   
