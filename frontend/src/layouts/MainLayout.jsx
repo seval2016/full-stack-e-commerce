@@ -9,7 +9,7 @@ const MainLayout = ({ children }) => {
 
   return (
     <div className="main-layout">
-      <Search  isSearchShow={isSearchShow}/>
+      <Search  isSearchShow={isSearchShow} setIsSearchShow={setIsSearchShow}/>
       <Header  setIsSearchShow={setIsSearchShow}/>
       {children}
       <Footer />

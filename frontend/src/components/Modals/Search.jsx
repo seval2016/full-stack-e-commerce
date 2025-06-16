@@ -1,6 +1,6 @@
 import "./Search.css"
 
-const Search = ({isSearchShow}) => {
+const Search = ({isSearchShow , setIsSearchShow}) => {
   return (
     <div className={`modal-search ${isSearchShow ? "show" : ""}`}>
       <div className="modal-wrapper">
@@ -45,7 +45,7 @@ const Search = ({isSearchShow}) => {
             </a>
           </div>
         </div>
-        <i className="bi bi-x-circle" id="close-search"></i>
+        <i className="bi bi-x-circle" id="close-search" onClick={() => setIsSearchShow(false)}></i>
       </div>
     </div>
   );
