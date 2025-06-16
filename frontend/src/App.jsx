@@ -5,7 +5,8 @@
 //import BlogPage from "./pages/BlogPage";
 //import CartPage from "./pages/CartPage";
 import "./App.css";
-import BlogDetailsPage from "./pages/BlogDetailsPage";
+//import BlogDetailsPage from "./pages/BlogDetailsPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/*<AuthPage />*/}
       {/*<CartPage />*/}
       {/*<BlogPage />*/}
-      <BlogDetailsPage />
+      {/*<BlogDetailsPage />*/}
+      <ProductDetailsPage />
     </>
   );
 }
