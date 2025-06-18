@@ -1,4 +1,5 @@
 import "./Search.css";
+import PropTypes from "prop-types";
 
 const Search = ({ isSearchShow, setIsSearchShow }) => {
   return (
@@ -21,7 +22,7 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
           <div className="results">
             <a href="#" className="result-item">
               <img
-                src="img/products/product1/1.png"
+                src="/img/products/product1/1.png"
                 className="search-thumb"
                 alt=""
               />
@@ -33,7 +34,7 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
             </a>
             <a href="#" className="result-item">
               <img
-                src="img/products/product2/1.png"
+                src="/img/products/product2/1.png"
                 className="search-thumb"
                 alt=""
               />
@@ -60,3 +61,8 @@ const Search = ({ isSearchShow, setIsSearchShow }) => {
 };
 
 export default Search;
+
+Search.propTypes = {
+  isSearchShow: PropTypes.bool,
+  setIsSearchShow: PropTypes.func,
+};
