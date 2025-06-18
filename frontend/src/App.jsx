@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 //import ContactPage from "./pages/ContactPage";
 //import AuthPage from "./pages/AuthPage";
 //import BlogPage from "./pages/BlogPage";
-//import CartPage from "./pages/CartPage";
+import CartPage from "./pages/CartPage";
 import "./App.css";
 //import BlogDetailsPage from "./pages/BlogDetailsPage";
 //import ProductDetailsPage from "./pages/ProductDetailsPage";
@@ -11,11 +11,11 @@ import "./App.css";
 function App() {
   return (
     <>
-      <HomePage />
+      {/*<HomePage />*/}
       {/*<ShopPage />*/}
       {/*<ContactPage />*/}
       {/*<AuthPage />*/}
-      {/*<CartPage />*/}
+      <CartPage />
       {/*<BlogPage />*/}
       {/*<BlogDetailsPage />*/}
       {/*<ProductDetailsPage />*/}

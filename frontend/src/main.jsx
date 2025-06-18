@@ -1,13 +1,16 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import MainLayout from "./layouts/MainLayout.jsx";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import MainLayout from "./layouts/MainLayout";
+import CartProvider from "./context/CartProvider";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import App from "./App.jsx";
+import "./index.css";
 
-createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <CartProvider>
     <MainLayout>
       <App />
     </MainLayout>
+  </CartProvider>
 );

@@ -1,11 +1,15 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartProvider";
 import "./ProductItem.css";
 
-const ProductItem = ({ productItem, setCartItems }) => {
-  const addToCart = (cartItem) => {
-    // setCartItems([...cartItems, cartItem]); 1. yol
-    setCartItems((prevCart) => [...prevCart, cartItem]);
-  };
+const ProductItem = ({ productItem }) => {
+  const { cartItems, addToCart } = useContext(CartContext);
+
+  const filteredCart = cartItems.find(
+    (cartItem) => cartItem.id === productItem.id
+  );
+
 
   return (
     <div className="product-item glide__slide glide__slide--active">
@@ -49,6 +53,7 @@ const ProductItem = ({ productItem, setCartItems }) => {
           <button
             className="add-to-cart"
             onClick={() => addToCart(productItem)}
+            disabled={filteredCart}
           >
             <i className="bi bi-basket-fill"></i>
           </button>
