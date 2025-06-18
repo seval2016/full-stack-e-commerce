@@ -1,6 +1,10 @@
+import { useState } from "react";
 import "./Info.css";
 
 const Info = () => {
+  const [activeSize, setActiveSize] = useState("desc");
+  const [activeColor, setActiveColor] = useState("green");
+
   return (
     <div className="product-info">
       <h1 className="product-title">Ridley High Waist</h1>
@@ -39,22 +43,42 @@ const Info = () => {
               <span>Color</span>
             </div>
             <div className="colors-wrapper">
-              <div className="color-wrapper">
+              <div
+                className={`color-wrapper ${
+                  activeColor === "blue" ? "active" : ""
+                }`}
+                onClick={() => setActiveColor("blue")}
+              >
                 <label className="blue-color">
                   <input type="radio" name="product-color" />
                 </label>
               </div>
-              <div className="color-wrapper">
+              <div
+                className={`color-wrapper ${
+                  activeColor === "red" ? "active" : ""
+                }`}
+                onClick={() => setActiveColor("red")}
+              >
                 <label className="red-color">
                   <input type="radio" name="product-color" />
                 </label>
               </div>
-              <div className="color-wrapper active">
+              <div
+                className={`color-wrapper ${
+                  activeColor === "green" ? "active" : ""
+                }`}
+                onClick={() => setActiveColor("green")}
+              >
                 <label className="green-color">
                   <input type="radio" name="product-color" />
                 </label>
               </div>
-              <div className="color-wrapper">
+              <div
+                className={`color-wrapper ${
+                  activeColor === "purple" ? "active" : ""
+                }`}
+                onClick={() => setActiveColor("purple")}
+              >
                 <label className="purple-color">
                   <input type="radio" name="product-color" />
                 </label>
@@ -66,15 +90,40 @@ const Info = () => {
               <span>Size</span>
             </div>
             <div className="values-list">
-              <span className="active">XS</span>
-              <span>S</span>
-              <span>M</span>
-              <span>L</span>
-              <span>XL</span>
+              <span
+                className={activeSize === "XS" ? "active" : ""}
+                onClick={() => setActiveSize("XS")}
+              >
+                XS
+              </span>
+              <span
+                className={activeSize === "S" ? "active" : ""}
+                onClick={() => setActiveSize("S")}
+              >
+                S
+              </span>
+              <span
+                className={activeSize === "M" ? "active" : ""}
+                onClick={() => setActiveSize("M")}
+              >
+                M
+              </span>
+              <span
+                className={activeSize === "L" ? "active" : ""}
+                onClick={() => setActiveSize("L")}
+              >
+                L
+              </span>
+              <span
+                className={activeSize === "XL" ? "active" : ""}
+                onClick={() => setActiveSize("XL")}
+              >
+                XL
+              </span>
             </div>
           </div>
           <div className="cart-button">
-            <input type="number"  defaultValue="1" min="1" id="quantity" />
+            <input type="number" defaultValue="1" min="1" id="quantity" />
             <button
               className="btn btn-lg btn-primary"
               id="add-to-cart"

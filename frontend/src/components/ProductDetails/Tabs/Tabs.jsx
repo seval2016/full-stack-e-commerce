@@ -10,7 +10,7 @@ const Tabs = () => {
     setActiveTab(tab);
   };
 
-  return (
+  return ( 
     <div className="single-tabs">
       <ul className="tab-list">
         <li>
