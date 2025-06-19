@@ -1,5 +1,24 @@
+Node.js -> js'in server tarafın da da çalışması için kullanılan dil 
+Express.js -> Node.js'i http modulleri üzerinde çalışabilmek için kullandıgımız kütüphane. 
+
 1.Adım : npm init -y package.json dosyasını hızlı bir şekilde oluşturmasını sağla
+
 2.Adım : package.json içerisinde  "main": "server.js" olarak değiştir.
+
 3.Adım : server.js içerisinde console.log("Server is starting...") yaz 
-C:\Users\seval\OneDrive\Masaüstü\full-stack-e-commerce\backend>node server.js -> ile terminalde çalışıp çalışmadıgını 
-kontrol et
+    C:\Users\seval\OneDrive\Masaüstü\full-stack-e-commerce\backend>node server.js -> ile terminalde 
+    çalışıp çalışmadıgını kontrol et
+    
+4.Adım : C:\Users\seval\OneDrive\Masaüstü\full-stack-e-commerce\backend>npm i express ile express 
+    kurulumu gerçekleşir ve daha sonra const express = require('express') 'ı server.js'e import et.
+
+5.Adım : C:\Users\seval\OneDrive\Masaüstü\full-stack-e-commerce\backend>npm i nodemon -> backendde 
+    yapılan her değişiklikte projeyi tekrar tekrar yeniden çalıştırmak gerekmesin diye kullanıyoruz.
+
+6.Adım : 5.adımdan sonra package.json de "start": "nodemon server.js" olarak güncelleyeceğiz.
+
+7.Adım : mongo.db web sayfasında db oluştur
+
+8.Adım : mongo.db yi node.js server da kullanabilmek için -> npm i mongoose kurulmalı
+
+9.Adım : const mongoose = require('mongoose'); 'yi server.js'e import etmeliyiz
