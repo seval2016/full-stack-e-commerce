@@ -1,0 +1,5 @@
+1.Adım : npm init -y package.json dosyasını hızlı bir şekilde oluşturmasını sağla
+2.Adım : package.json içerisinde  "main": "server.js" olarak değiştir.
+3.Adım : server.js içerisinde console.log("Server is starting...") yaz 
+C:\Users\seval\OneDrive\Masaüstü\full-stack-e-commerce\backend>node server.js -> ile terminalde çalışıp çalışmadıgını 
+kontrol et
