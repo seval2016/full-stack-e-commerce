@@ -28,3 +28,7 @@ bu dosyaya alıyoruz(database adresi vs.)
 
 11.Adım : npm i dotenv 'yi kurmamız gerekiyor ve daha sonra bu kütüphaneyi server.js 'e import et
 const dotenv = require('dotenv');
+
+12.Adım : Routes klasörü oluştur ve endpoint routerları oluştur .
+
+13.Adım : Models klasörü oluştur 
