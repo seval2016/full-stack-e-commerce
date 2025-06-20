@@ -8,7 +8,7 @@ Express.js -> Node.js'i http modulleri üzerinde çalışabilmek için kullandı
 3.Adım : server.js içerisinde console.log("Server is starting...") yaz 
     C:\Users\seval\OneDrive\Masaüstü\full-stack-e-commerce\backend>node server.js -> ile terminalde 
     çalışıp çalışmadıgını kontrol et
-    
+
 4.Adım : C:\Users\seval\OneDrive\Masaüstü\full-stack-e-commerce\backend>npm i express ile express 
     kurulumu gerçekleşir ve daha sonra const express = require('express') 'ı server.js'e import et.
 
@@ -22,3 +22,9 @@ Express.js -> Node.js'i http modulleri üzerinde çalışabilmek için kullandı
 8.Adım : mongo.db yi node.js server da kullanabilmek için -> npm i mongoose kurulmalı
 
 9.Adım : const mongoose = require('mongoose'); 'yi server.js'e import etmeliyiz
+
+10.Adım : güenlik için enviroment (.env) dosyası oluşturarak backend de gizlenmesi gereken verileri 
+bu dosyaya alıyoruz(database adresi vs.)
+
+11.Adım : npm i dotenv 'yi kurmamız gerekiyor ve daha sonra bu kütüphaneyi server.js 'e import et
+const dotenv = require('dotenv');
