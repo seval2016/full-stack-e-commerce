@@ -32,3 +32,7 @@ const dotenv = require('dotenv');
 12.Adım : Routes klasörü oluştur ve endpoint routerları oluştur .
 
 13.Adım : Models klasörü oluştur 
+
+14.Adım : npm i morgan kurarak terminalde status bilgilerini mesaj olarak alabiliriz.
+
+15.Adım : models klasöründe category.js 'in endpoint'lerini yaz 
