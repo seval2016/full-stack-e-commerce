@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const Category = require("../models/Coupon.js");
+const Coupon = require("../models/Coupon.js");
 
 // Yeni bir kupon oluşturma (Create)
 router.post("/", async (req, res) => {
   try {
     const { code, discountPercent } = req.body;
 
-    const newCoupon = new Category({ code, discountPercent });
+    const newCoupon = new Coupon({ code, discountPercent });
     await newCoupon.save();
 
     res.status(201).json(newCoupon);
@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) =>
     {
         try {
-            const coupons = await Category.find();
+            const coupons = await Coupon.find();
             res.status(200).json(coupons);
         } catch (error) {
             console.log(error);
@@ -30,10 +30,10 @@ router.get("/", async (req, res) =>
     });
 
 // Belirli bir kuponu getirme (Read - Single)
-router.get("/:id", async (req, res) =>
+router.get("/:couponId", async (req, res) =>
     {
         try {
-            const coupon = await Category.findById(req.params.id);
+            const coupon = await Coupon.findById(req.params.couponId);
             if (!coupon) {
                 return res.status(404).json({ error: "Coupon not found." });
             }
@@ -45,31 +45,36 @@ router.get("/:id", async (req, res) =>
     });
 
 // Kuponu güncelleme (Update)
-router.put("/:id", async (req, res) =>
-    {
-        try {                   
-            const { code, discountPercent } = req.body;
-            const updatedCoupon = await Category.findByIdAndUpdate(
-                req.params.id,
-                { code, discountPercent },
-                { new: true }
-            );
+router.put("/:couponId", async (req, res) => {
+  try {
+    const { code, discountPercent } = req.body;
 
-            if (!updatedCoupon) {
-                return res.status(404).json({ error: "Coupon not found." });
-            }
+    if (!code || discountPercent == null) {
+      return res.status(400).json({ error: "Code and discountPercent are required." });
+    }
 
-            res.status(200).json(updatedCoupon);
-        } catch (error) {
-            console.log(error);
-            res.status(500).json({ error: "Server error." });
-        }
-    });
+    const updatedCoupon = await Coupon.findByIdAndUpdate(
+      req.params.couponId,
+      { code, discountPercent },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedCoupon) {
+      return res.status(404).json({ error: "Coupon not found." });
+    }
+
+    res.status(200).json(updatedCoupon);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
+
 
 // Kuponu silme (Delete)
-router.delete("/:id", async (req, res) => {
+router.delete("/:couponId", async (req, res) => {
   try {
-    const deletedCoupon = await Category.findByIdAndDelete(req.params.id);
+    const deletedCoupon = await Coupon.findByIdAndDelete(req.params.couponId);
     if (!deletedCoupon) {
       return res.status(404).json({ error: "Coupon not found." });
     }
@@ -84,7 +89,7 @@ router.delete("/:id", async (req, res) => {
 router.post("/validate", async (req, res) => {
   try {
     const { code } = req.body;
-    const coupon = await Category.findOne({ code });
+    const coupon = await Coupon.findOne({ code });
     if (!coupon) {
       return res.status(404).json({ error: "Coupon not found." });
     }
