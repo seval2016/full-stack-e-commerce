@@ -38,3 +38,5 @@ const dotenv = require('dotenv');
 15.Adım : models klasöründe category.js, product.js endpoint'lerini yaz 
 16.Adım : auth (user ,regist) endpointlerini yaz ve şifre için bcryptjs kütüphanesini kur.
 db de şifreleme için "npm i bcryptjs" 
+
+17.Adım : token fonksiyonunu ekle 
