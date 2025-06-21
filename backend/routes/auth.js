@@ -9,8 +9,6 @@ const generateAvatar = () => {
   return `https://i.pravatar.cc/300?img=${randomAvatar}`;
 };
 
-
-
 // Kullanıcı Oluşturma (Create - Register)
 router.post("/register", async (req, res) => {
   try {
@@ -27,12 +25,34 @@ router.post("/register", async (req, res) => {
       username,
       email,
       password: hashedPassword,
-      avatar : generateAvatar(),
+      avatar: generateAvatar(),
     });
 
     await newUser.save();
 
     res.status(201).json(newUser);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
+
+//Kullanıcı Giriş Yapma (Login)
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ error: "User not found." });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ error: "Invalid credentials." });
+    }
+
+    res.status(200).json(user);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error." });
