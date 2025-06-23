@@ -2,8 +2,10 @@ import React from 'react'
 
 const AdminLayout = () => {
   return (
-    <div>
-        <h1>Admin Layout</h1>
+    <div className='admin-layout'>
+        <div>Sidebar</div>
+        <div>Header</div>
+        <div>Content</div>
     </div>
   )
 }
